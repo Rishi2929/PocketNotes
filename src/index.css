@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: "Roboto", sans-serif;
+  }
+
+  body {
+    max-width: 1440px;
+    margin: auto;
+  }
+}
+
+@layer components {
+  .date-time {
+    @apply whitespace-nowrap text-sm font-medium tracking-[0.017rem] text-[#353535] sm:text-base;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: #bcbcbc80;
+    border-radius: 6px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+    border: 1px solid #F7ECDC;
+    background-color: #fff;
+  }
+
+}
+
+@layer utilities {
+  .half-opaque {
+    background: rgba(0, 0, 0, 0.5);
+  }
+}
