@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 
 import Popup from "../../components/Popup";
 import GroupListContext from "../../context/groupList/GroupListContext";
+import "./groupList.scss";
 
 const GroupList = () => {
   const [groupList, setGroupList] = useState([]);
@@ -34,22 +35,16 @@ const GroupList = () => {
 
   return (
     <>
-      <div className="min-h-screen pb-1 pl-5 pt-6">
-        <h1 className="whitespace-nowrap text-3xl font-medium tracking-[0.02938rem] text-black">
-          Pocket Notes
-        </h1>
+      <div className="group-list-container">
+        <h1 className="title">Pocket Notes</h1>
 
-        <button
-          onClick={handleCreateGroupBtn}
-          className="mb-4 mt-4 flex w-72 items-center justify-center gap-3 whitespace-nowrap rounded-3xl bg-black px-1 py-2
-          text-base font-medium tracking-[0.02519rem] text-white sm:mr-4"
-        >
+        <button onClick={handleCreateGroupBtn} className="create-group-button">
           <FaPlus />
           <span>Create Notes group</span>
         </button>
 
-        <div className="pr-0">
-          <div className="h-[79vh] space-y-4 overflow-y-scroll">
+        <div className="group-list-wrapper">
+          <div className="group-list rtl">
             {groupList.map((group) => {
               return (
                 <NavLink
@@ -59,17 +54,12 @@ const GroupList = () => {
                     background: isActive ? "#F7ECDC" : "",
                     borderRadius: "1.5rem 0 0 1.5rem",
                   })}
-                  className={`flex items-center gap-3 pb-2 pt-2`}
+                  className={`group-link ltr`}
                 >
-                  <div
-                    style={{ background: group.color }}
-                    className="ml-4 flex h-12 w-12 items-center justify-center rounded-full"
-                  >
-                    <span className="text-base font-medium uppercase tracking-[0.02713rem] text-white">
-                      {group.name.substring(0, 2)}
-                    </span>
+                  <div style={{ background: group.color }} className="group-color">
+                    <span className="group-initials">{group.name.substring(0, 2)}</span>
                   </div>
-                  <h3 className="text-base font-medium capitalize tracking-[0.02325rem]">{group.name}</h3>
+                  <h3 className="group-name">{group.name}</h3>
                 </NavLink>
               );
             })}
@@ -79,10 +69,7 @@ const GroupList = () => {
 
       {isPopupShowing && (
         <>
-          <div
-            id="blur"
-            className="half-opaque pointer-events-auto fixed left-0 top-0 z-50 h-full w-full"
-          ></div>
+          <div id="blur" className="blur"></div>
           <Popup setIsPopupShowing={setIsPopupShowing} />
         </>
       )}

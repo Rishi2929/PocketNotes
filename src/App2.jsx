@@ -1,7 +1,7 @@
 
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
-import "./App.css";
+import "./index.css";
 import GroupList from "./pages/groupList/GroupList";
 import DefaultBody from "./pages/noteBody/DefaultBody";
 import NoteBody from "./pages/noteBody/NoteBody";
@@ -49,10 +49,10 @@ const App2 = () => {
 
   return (
     <GroupListContextProvider>
-      <div className="sm:hidden">
+      <div className="mobile">
         <RouterProvider router={appRouterMobile} />
       </div>
-      <div className="hidden sm:block">
+      <div className="desktop">
         <RouterProvider router={appRouterDesktop} />
       </div>
     </GroupListContextProvider>

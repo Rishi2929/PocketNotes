@@ -1,0 +1,172 @@
+@import "../../mixins.scss";
+
+.note-body-container {
+  height: 100vh;
+  background-color: #e8e8e8;
+  @include sm {
+    width: 100%;
+  }
+
+  .header {
+    display: flex;
+    gap: 0.5rem;
+    height: 10vh;
+    align-items: center;
+    padding: 0.5rem 0.25rem;
+    color: black;
+
+    .back-btn {
+      // margin-right: 0.5rem;
+      color: #5c5c5c;
+      cursor: pointer;
+      font-size: 2.25rem;
+      line-height: 2.5rem;
+      @include sm {
+        display: none;
+      }
+    }
+
+    .group-icon {
+      // margin-right: 0.5rem;
+      display: flex;
+      width: 3rem;
+      height: 3rem;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      @include sm {
+        height: 3.5rem;
+        width: 3.5rem;
+        margin-left: 1rem;
+      }
+
+      .group-icon-text {
+        font-size: 1rem;
+        line-height: 1.5rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.02713rem;
+        color: white;
+      }
+    }
+
+    .group-title {
+      font-size: 1rem;
+      line-height: 1.5rem;
+      font-weight: 500;
+      text-transform: capitalize;
+      @include sm {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+      }
+    }
+  }
+
+  .notes-section {
+    height: 70vh;
+    overflow: auto;
+    background: #f7ecdc;
+    padding: 2rem 1rem 1rem;
+    @include sm {
+      padding-bottom: 2rem;
+      padding-left: 2.5rem;
+      padding-top: 3rem;
+      padding-top: 3rem;
+    }
+
+    .notes-container {
+      .note-entry {
+        margin-top: 1.25rem;
+        display: flex;
+        justify-content: flex-start;
+        gap: 0.75rem;
+        &:first-of-type {
+          margin-top: 0;
+        }
+        @include sm {
+          margin-top: 2.5rem;
+          gap: 2rem;
+        }
+
+        .note-timestamp {
+          .date-time {
+            display: block;
+            white-space: nowrap;
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+            font-weight: 500;
+            letter-spacing: 0.017rem;
+            color: #353535;
+            @include sm {
+              font-size: 1rem;
+            }
+          }
+        }
+
+        .note-text {
+          font-size: 0.875rem;
+          line-height: 1.25rem;
+          font-weight: 400;
+          letter-spacing: 0.02844rem;
+          @include sm {
+            font-size: 1.25rem /* 20px */;
+            line-height: 1.75rem;
+            letter-spacing: 0.03938rem;
+          }
+        }
+      }
+    }
+  }
+
+  .footer {
+    height: 20vh;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    @include sm {
+      padding-left: 1rem;
+      padding-right: 1rem;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+
+    .textarea-container {
+      position: relative;
+      height: 100%;
+
+      .textarea-input {
+        width: 100%;
+        min-height: 100%;
+        resize: none;
+        padding-left: 0.5rem;
+        padding-right: 0.25rem;
+        padding-top: 0.25rem;
+        font-size: 1rem;
+        line-height: 1.5rem;
+        &::placeholder {
+          color: #9a9a9a;
+          letter-spacing: 0.02rem;
+        }
+        @include sm {
+          font-size: 1.25rem;
+          line-height: 1.75rem;
+        }
+      }
+
+      .send-button {
+        position: absolute;
+        bottom: 0.25rem;
+        right: 0.25rem;
+        cursor: pointer;
+        color: #ababab;
+        @include sm {
+          bottom: 0.5rem;
+          right: 0.5rem;
+          height: 1.5rem;
+          width: 1.5rem;
+        }
+      }
+    }
+  }
+}

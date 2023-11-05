@@ -1,0 +1,50 @@
+@import "../../mixins.scss";
+
+.default-body-container {
+  width: 100%;
+  background-color: #f7ecdc;
+  height: 100vh;
+
+  .default-body {
+    display: grid;
+    height: 96%;
+    place-items: center;
+
+    .content {
+      display: grid;
+      place-items: center;
+      gap: 1rem;
+
+      h1 {
+        font-size: 3rem;
+        line-height: 1;
+        letter-spacing: 0.06rem;
+      }
+
+      p {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+        width: 42vw;
+        color: #292929;
+        letter-spacing: 0.0275rem;
+      }
+    }
+  }
+
+  .footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .lock-icon {
+      color: #292929;
+    }
+
+    .encryption-text {
+      font-size: 1rem;
+      line-height: 1.5rem;
+      color: #292929;
+      letter-spacing: 0.0275rem;
+    }
+  }
+}
